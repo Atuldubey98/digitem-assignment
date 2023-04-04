@@ -28,6 +28,9 @@ export default function Header() {
         <li>
           <Link>Explore</Link>
         </li>
+        <li>
+          <Link>Chats</Link>
+        </li>
       </ul>
       <form autoComplete="false" onSubmit={onSubmit}>
         <input
