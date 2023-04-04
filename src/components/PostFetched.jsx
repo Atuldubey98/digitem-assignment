@@ -43,7 +43,9 @@ function PostFetched({ post }) {
               {post.user?.first_name || "" + " " + post.user?.last_name || ""}
             </span>
             <TbCircleDotFilled color="green" />
-            <span style={{ color: "#e755e7", fontWeight: "bold" }}>Follow</span>
+            <span style={{ color: "rgb(235, 102, 124)", fontWeight: "bold" }}>
+              Follow
+            </span>
           </div>
           <h5 className="post__time">
             {timeSince(new Date(post.created_at)) + " ago"}
