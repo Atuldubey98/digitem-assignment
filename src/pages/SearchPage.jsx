@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setResultsError,
   setResultsLoading,
+  setResultsReset,
   setResultsSuccess,
 } from "../redux/reducers/searchReducer";
 import { ClipLoader } from "react-spinners";
@@ -20,23 +21,24 @@ function SearchPage() {
   const { totalPages, total, results } = data;
   // implement the Search Page
   useEffect(() => {
-    if (page ===  1) {
+    if (page === 1) {
+      dispatch(setResultsReset());
     }
     (async () => {
-        try {
-          dispatch(setResultsLoading());
-          const { data } = await instance.get("/search/photos", {
-            params: {
-              query: searchTerm,
-              page,
-            },
-          });
-          dispatch(setResultsSuccess(data));
-        } catch (error) {
-          dispatch(setResultsError("Some error occured in API"));
-        }
-      })();
-  }, []);
+      try {
+        dispatch(setResultsLoading());
+        const { data } = await instance.get("/search/photos", {
+          params: {
+            query: searchTerm,
+            page,
+          },
+        });
+        dispatch(setResultsSuccess(data));
+      } catch (error) {
+        dispatch(setResultsError("Some error occured in API"));
+      }
+    })();
+  }, [page]);
   return (
     <div className="search__page">
       <div className="search__results">

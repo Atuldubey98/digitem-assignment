@@ -24,7 +24,6 @@ export default function HomePage() {
     (async () => {
       try {
         dispatch(postFetchLoading());
-        console.log(page);
         const { data } = await instance.get("/photos", {
           params: { page },
         });

@@ -26,9 +26,12 @@ export const searchSlice = createSlice({
     setResultsLoading: (state) => {
       state.loading = true;
     },
+    setResultsReset: (state) => {
+      state = initialState;
+    },
   },
 });
-export const { setResultsError, setResultsSuccess, setResultsLoading } =
+export const { setResultsError, setResultsSuccess, setResultsLoading,setResultsReset } =
   searchSlice.actions;
 
 export default searchSlice.reducer;

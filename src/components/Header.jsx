@@ -34,7 +34,11 @@ export default function Header() {
         <InputField
           input={{ placeholder: "Search", value: search, onChange }}
         />
-        <IoSearchSharp type="submit" role="button" />
+        <IoSearchSharp
+          type="submit"
+          role="button"
+          style={{ margin: "0.2rem" }}
+        />
       </form>
     </header>
   );
