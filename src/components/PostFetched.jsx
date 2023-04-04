@@ -32,13 +32,13 @@ function PostFetched({ post }) {
   return (
     <div style={{ maxWidth: "450px" }} className="post__fetch">
       <div className="post__header">
+        <img
+          loading="lazy"
+          src={post.user?.profile_image.small}
+          alt={post.id}
+        />
         <div className="post__owner">
           <div className="owner">
-            <img
-              loading="lazy"
-              src={post.user?.profile_image.small}
-              alt={post.id}
-            />
             <span className="post__ownerName">
               {post.user?.first_name || "" + " " + post.user?.last_name || ""}
             </span>

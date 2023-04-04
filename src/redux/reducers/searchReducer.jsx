@@ -27,11 +27,21 @@ export const searchSlice = createSlice({
       state.loading = true;
     },
     setResultsReset: (state) => {
-      state = initialState;
+      state.data = {
+        results: [],
+        total: 0,
+        totalPages: 0,
+      };
+      state.error = "";
+      state.loading = false;
     },
   },
 });
-export const { setResultsError, setResultsSuccess, setResultsLoading,setResultsReset } =
-  searchSlice.actions;
+export const {
+  setResultsError,
+  setResultsSuccess,
+  setResultsLoading,
+  setResultsReset,
+} = searchSlice.actions;
 
 export default searchSlice.reducer;

@@ -1,9 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import "./Header.css";
-import InputField from "./InputField";
-import { IoSearchSharp } from "react-icons/io5";
 import { useState } from "react";
+import { IoSearchSharp } from "react-icons/io5";
+import { Link, useNavigate } from "react-router-dom";
 import useQuery from "../hooks/useQuery";
+import "./Header.css";
 export default function Header() {
   const query = useQuery();
   const searchTerm = query.has("query") ? query.get("query") : "";
@@ -30,9 +29,12 @@ export default function Header() {
           <Link>Explore</Link>
         </li>
       </ul>
-      <form onSubmit={onSubmit}>
-        <InputField
-          input={{ placeholder: "Search", value: search, onChange }}
+      <form autoComplete="false" onSubmit={onSubmit}>
+        <input
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={onChange}
         />
         <IoSearchSharp
           type="submit"

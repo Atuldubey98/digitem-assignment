@@ -3,6 +3,9 @@
   background-color: white;
   margin-top: 0.2rem;
   padding: 0.5rem;
+  box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.61);
+  -webkit-box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 0px 4px 21px 0px rgba(0, 0, 0, 0.61);
 }
 .post__image {
   display: flex;
@@ -13,20 +16,28 @@
 .post__image img {
   margin: auto;
   object-fit: contain;
+  border-radius: 0.3rem;
 }
 .post__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+.post__header img {
+  flex: 2;
+  object-fit: contain;
+  max-width: 1.8rem;
+  border-radius: 1.8rem;
 }
 .post__ownerName {
   font-size: 0.8rem;
 }
 .post__owner {
+  padding-left: 0.4rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  flex: 8;
 }
 .owner {
   display: flex;
@@ -34,7 +45,7 @@
   justify-content: center;
 }
 
-.owner img{
+.owner img {
   border-radius: 1rem;
   margin: 0.5rem;
 }

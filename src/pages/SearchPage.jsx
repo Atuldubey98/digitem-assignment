@@ -9,6 +9,7 @@ import {
   setResultsReset,
   setResultsSuccess,
 } from "../redux/reducers/searchReducer";
+import { MdSearchOff } from "react-icons/md";
 import { ClipLoader } from "react-spinners";
 import useScrollPage from "../hooks/useScrollPage";
 function SearchPage() {
@@ -18,8 +19,7 @@ function SearchPage() {
   const instance = useAxios();
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.results);
-  const { totalPages, total, results } = data;
-  // implement the Search Page
+  const { results } = data;
   useEffect(() => {
     if (page === 1) {
       dispatch(setResultsReset());
@@ -38,9 +38,17 @@ function SearchPage() {
         dispatch(setResultsError("Some error occured in API"));
       }
     })();
-  }, [page]);
+  }, [page, searchTerm]);
   return (
     <div className="search__page">
+      {results.length === 0 ? (
+        loading ? null : (
+          <div className="search__resultsNone">
+            <h1>No splash for you</h1>
+            <MdSearchOff size={50} color="rgb(161, 159, 159)" />
+          </div>
+        )
+      ) : null}
       <div className="search__results">
         {results.map((result, index) => (
           <img
