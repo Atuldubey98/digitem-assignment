@@ -1,0 +1,39 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 5rem;
+}
+header h2 {
+  flex: 3;
+  padding-left: 0.5rem;
+  color: rgb(235, 102, 124);
+}
+.header__links {
+  flex: 7;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header__links li {
+  all: unset;
+  padding: 0.2rem;
+}
+.header__links li a {
+  all: unset;
+  font-weight: bold;
+  cursor: pointer;
+}
+.input__field {
+  padding-right: 0.3rem;
+}
+header form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(236, 235, 235);
+}

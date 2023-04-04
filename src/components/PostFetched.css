@@ -1,0 +1,40 @@
+.post__fetch {
+  margin: auto;
+  background-color: white;
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+}
+.post__image {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.post__image img {
+  margin: auto;
+  object-fit: contain;
+}
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post__ownerName {
+  font-size: 0.8rem;
+}
+.post__owner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.owner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owner img{
+  border-radius: 1rem;
+  margin: 0.5rem;
+}

@@ -1,0 +1,29 @@
+.search__page {
+  background-color: rgb(236, 235, 235);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90svh;
+}
+.search__results {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.search__results img {
+  margin: 0 auto;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .search__results {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search__results {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+.posts__display {
+  display: grid;
+  gap: 0.2rem;
+}
+.home__page {
+  background-color: rgb(236, 235, 235);
+  min-height: 90svh;
+}
+.loading__spinner {
+  background-color: rgb(236, 235, 235);
+  display: flex;
+  min-height: 20svh;
+  align-items: center;
+  justify-content: center;
+}
