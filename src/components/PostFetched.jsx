@@ -1,7 +1,13 @@
 import React from "react";
-import "./PostFetched.css";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
+import { FaRegCommentDots } from "react-icons/fa";
 import { TbCircleDotFilled } from "react-icons/tb";
+import { MdAttachMoney } from "react-icons/md";
+
+import "./PostFetched.css";
+import PostIcon from "./PostIcon";
+
 function PostFetched({ post }) {
   function timeSince(date) {
     var seconds = Math.floor((new Date() - date) / 1000);
@@ -62,6 +68,33 @@ function PostFetched({ post }) {
           src={post.urls.regular}
           alt={post.id}
         />
+      </div>
+      <div className="post__footer">
+        <div className="post__footerIcons">
+          <div className="post__footerIconsLeft">
+            <PostIcon icon={<AiOutlineHeart color="red" />} text={0} />
+            <PostIcon icon={<FaRegCommentDots />} text={0} />
+            <h5>
+              <MdAttachMoney color="green" /> 0.00{" "}
+            </h5>
+          </div>
+          <BsBookmark />
+        </div>
+        <div className="post__footerInfo">
+          <h5 className="post__ownerName">
+            {post.user?.first_name || "" + " " + post.user?.last_name || ""}
+          </h5>
+          <p className="post__footerAll">View all comments</p>
+          <p
+            style={{
+              color: "rgb(235, 102, 124)",
+              fontWeight: "bold",
+              fontSize: "0.8rem",
+            }}
+          >
+            Add a comment
+          </p>
+        </div>
       </div>
     </div>
   );

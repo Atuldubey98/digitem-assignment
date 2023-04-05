@@ -1,0 +1,10 @@
+.post__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.3rem;
+}
+
+.post__icon h5 {
+  margin-right: 0.1rem;
+}

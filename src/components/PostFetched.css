@@ -49,3 +49,26 @@
   border-radius: 1rem;
   margin: 0.5rem;
 }
+.post__footerIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.post__footerIconsLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post__footerInfo {
+  display: grid;
+}
+.post__footerAll {
+  font-size: 0.7rem;
+  color: grey;
+}
+
+.post__footerComment {
+  color: pink;
+}
