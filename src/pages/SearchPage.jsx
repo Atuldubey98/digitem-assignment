@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useQuery from "../hooks/useQuery";
 import "./SearchPage.css";
 import useAxios from "../hooks/useAxios";
@@ -16,12 +16,13 @@ function SearchPage() {
   const query = useQuery();
   const [page] = useScrollPage();
   const searchTerm = query.has("query") ? query.get("query") : "";
+  const [prevSearch, setPreviousSearch] = useState("");
   const instance = useAxios();
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.results);
   const { results } = data;
   useEffect(() => {
-    if (page === 1) {
+    if (page === 1 || !searchTerm || prevSearch !== searchTerm) {
       dispatch(setResultsReset());
     }
     (async () => {
@@ -33,6 +34,7 @@ function SearchPage() {
             page,
           },
         });
+        setPreviousSearch(searchTerm);
         dispatch(setResultsSuccess(data));
       } catch (error) {
         dispatch(setResultsError("Some error occured in API"));
